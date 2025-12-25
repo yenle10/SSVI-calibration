@@ -81,7 +81,7 @@ SSVI2 <- function(invec){
   SSVI(k,w0,eta,rho)
 }
 #2b. Parameter convert: SSVI--> SVI-JW --> Raw
-#first define trafo from SSVI to RAW and raw parametrization itself
+#first define parameters from SSVI to RAW and raw parametrization itself
 SSVItoJW <- function(eta, rho, w0, ttm){
   v <- w0/ttm;
   psi <- 0.5*rho*sqrt(w0)*eta/sqrt(w0)/sqrt(1+w0);
@@ -108,7 +108,7 @@ JWtoRAW <- function(invec){
   output;
 }
 
-#3. wrawprice: 4 versions: no arb, calendar, bf, both arb
+#3. wrawprice: 4 versions: no penalty for arb, add penalty for calendar arb, bf arb, both arb
 #3a: wrawpriceSA: total error. 
 #3b: wrawpriceSA_x: total error + penalty.cross
 #3c: wrawpriceSA_bf: total error + penalty.bf
